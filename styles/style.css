@@ -1,0 +1,9 @@
+.block{
+  position:absolute;
+  border-width:2px;
+}
+.p-in-block{
+  position:relative;
+  top:40px;
+  left:40px;
+}
