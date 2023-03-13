@@ -1,35 +1,44 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
-  
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/styles/style.css">
-  </head>
-  
-  <body>
-    <h1 align="center">Kirill Mezentsev</h1>
-    <div class="button-wrapper"><div><input type="button" value="Кнопка" id="my-button"></div></div>
-    <div class = "block">
-      <p class = "p-in-block">Hello! My name is Kirill and I'm junior FrontEnd developer!</p>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).on('mousemove', function (e) {
-            $('#my-button').css({
-                marginLeft: -e.pageX / 100 + 20,
-                marginTop: -e.pageY / 100 + 20
-            })
-        })
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        $("#my-button").hover(function () { 
-            $(this).css({
-                top: getRandomInt(0, 150)+"px",
-                left: getRandomInt(0, 150)+"px"
-            });
-        }, function () { });
-    </sсript>
-  </body>
+<head>
+<meta charset="utf-8">
+<title>Документ без названия</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+.touchMeNot{
+    position:absolute;
+    left:0;
+    top:0;
+}
+</style>
+</head>
+<body>
+  <button class="touchMeNot">Нажми меня (3 попытки)</button>
+
+  <script>
+  var myFuncCalls = 0;
+  $('.touchMeNot').on('mouseenter',function(e){
+      var maxX = $(window).width() - $(this).width();
+      var maxY = $(window).height() - $(this).height();
+      $(this).css({
+          'left':getRandomInt(0, maxX),
+          'top':getRandomInt(0, maxY)
+      });
+
+       if (myFuncCalls > 2) {
+      alert( "I have been called " + myFuncCalls + " times" );
+          $(this).css({
+          'left':0,
+          'top':0
+      });
+  }
+  myFuncCalls++;
+
+  });
+  function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  </script>
+</body>
 </html>
