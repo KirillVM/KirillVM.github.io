@@ -26,7 +26,7 @@
 </head>
 <body>
   <button class="touchMeNot">Нет</button>
-  <button class="yes">Да</button>
+  <button class="yes" onClick = isConfirm()>Да</button>
   <span class="question">Коля Лох?<span>    
   <script>
   var myFuncCalls = 0;
@@ -51,7 +51,9 @@
   function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-
+  function isConfirm(){
+      alert("Я с вами полностью согласен!");
+  }
   </script>
 </body>
 </html>
