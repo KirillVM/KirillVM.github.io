@@ -13,23 +13,23 @@
     <div class = "block">
       <p class = "p-in-block">Hello! My name is Kirill and I'm junior FrontEnd developer!</p>
     </div>
-
-  </body>
-  <script>
-    $(document).on('mousemove', function (e) {
-        $('#my-button').css({
-            marginLeft: -e.pageX / 100 + 20,
-            marginTop: -e.pageY / 100 + 20
+      <script src="/assets/js/jquery-3.5.1.min.js"></script>
+      <script>
+        $(document).on('mousemove', function (e) {
+            $('#my-button').css({
+                marginLeft: -e.pageX / 100 + 20,
+                marginTop: -e.pageY / 100 + 20
+            })
         })
-    })
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    $("#my-button").hover(function () { 
-        $(this).css({
-            top: getRandomInt(0, 150)+"px",
-            left: getRandomInt(0, 150)+"px"
-        });
-    }, function () { });
-  </sript>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        $("#my-button").hover(function () { 
+            $(this).css({
+                top: getRandomInt(0, 150)+"px",
+                left: getRandomInt(0, 150)+"px"
+            });
+        }, function () { });
+      </sript>
+  </body>
 </html>
