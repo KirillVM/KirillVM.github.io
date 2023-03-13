@@ -14,5 +14,22 @@
       <p class = "p-in-block">Hello! My name is Kirill and I'm junior FrontEnd developer!</p>
     </div>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        $(document).on('mousemove', function (e) {
+            $('#my-button').css({
+                marginLeft: -e.pageX / 100 + 20,
+                marginTop: -e.pageY / 100 + 20
+            })
+        })
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        $("#my-button").hover(function () { 
+            $(this).css({
+                top: getRandomInt(0, 150)+"px",
+                left: getRandomInt(0, 150)+"px"
+            });
+        }, function () { });
+      </sсript>
   </body>
 </html>
